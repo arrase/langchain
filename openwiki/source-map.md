@@ -44,10 +44,10 @@ sources:
     resource: repo://libs/partners/openai/langchain_openai/chat_models/base.py
   - id: openwiki-source-bd29e79613d5f366a00068f5
     resource: repo://libs/standard-tests/langchain_tests/base.py
-generated: { by: "openwiki/0.5.0", at: "2026-09-29T08:28:34.635Z" }
+generated: { by: "openwiki/0.5.0", at: "2026-10-01T08:30:30.281Z" }
 verified:
   - by: openwiki/0.5.0
-    at: 2026-09-29T08:28:34.635Z
+    at: 2026-10-01T08:30:30.281Z
 ---
 
 ## Overview
@@ -91,7 +91,7 @@ This page provides a quick reference for locating code by topic in the LangChain
 
 ```
 /libs/
-├── core/                           # langchain-core: Base abstractions (v1.6.5)
+├── core/                           # langchain-core: Base abstractions (v1.6.6)
 │   ├── langchain_core/
 │   │   ├── language_models/        # BaseChatModel and language model abstractions
 │   │   ├── messages/               # Message types and content blocks

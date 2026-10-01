@@ -5,7 +5,7 @@ description: "Entry point for engineers: orient to the monorepo structure, run f
 tags: [quickstart, getting-started, monorepo, setup, development, first-steps, cli-reference]
 verified:
   - by: openwiki/0.5.0
-    at: 2026-09-29T08:28:34.635Z
+    at: 2026-10-01T08:30:30.281Z
 sources:
   - id: openwiki-source-4d1645cb6317345817452838
     resource: repo://.pre-commit-config.yaml
@@ -17,6 +17,8 @@ sources:
     resource: repo://libs/core/langchain_core/language_models/chat_models.py
   - id: openwiki-source-0f6ea1dd09fb4675ff4112b1
     resource: repo://libs/core/langchain_core/messages/__init__.py
+  - id: openwiki-source-77dc1fb726463969f9d53658
+    resource: repo://libs/core/langchain_core/messages/ai.py
   - id: openwiki-source-e7908d069731cffec228727e
     resource: repo://libs/core/langchain_core/output_parsers/__init__.py
   - id: openwiki-source-c46a1d181ab64e61460c84c6
@@ -43,7 +45,7 @@ sources:
     resource: repo://libs/partners/openai/langchain_openai/__init__.py
   - id: openwiki-source-48ce5ee900993294d349b4e8
     resource: repo://libs/standard-tests/langchain_tests/__init__.py
-generated: { by: "openwiki/0.5.0", at: "2026-09-29T08:28:34.635Z" }
+generated: { by: "openwiki/0.5.0", at: "2026-10-01T08:30:30.281Z" }
 ---
 
 ## Welcome to LangChain Development
@@ -60,7 +62,7 @@ LangChain is organized as a **three-layer architecture** in `/libs/`:
 
 ```
 /libs/
-├── core/              # langchain-core (v1.6.5): Base abstractions (Runnable, BaseChatModel, tools, prompts, messages)
+├── core/              # langchain-core (v1.6.6): Base abstractions (Runnable, BaseChatModel, tools, prompts, messages)
 ├── langchain_v1/      # langchain (v1.4.3): Agent orchestration, factory, middleware
 ├── partners/          # Provider-specific integrations (OpenAI, Anthropic, Ollama, etc.)
 ├── standard-tests/    # Shared test suites for component conformance
@@ -136,6 +138,10 @@ Pre-commit hooks run:
 - Text normalization and trailing whitespace fixes
 - **Per-package formatting and linting** (ruff, mypy)
 - **Version consistency checks** across `pyproject.toml` files
+
+### Recent Changes: Token Detail Tracking in Messages
+
+Recent updates to message handling include support for detailed token usage tracking via `InputTokenDetails` and `OutputTokenDetails` in `AIMessage` and `UsageMetadata`. These TypedDicts allow providers to report granular token information (e.g., cache creation, cache hits, audio tokens). See the [Messages](/openwiki/messages.md) page for details on integrating this into chat model implementations.
 
 ## Common Development Tasks
 
